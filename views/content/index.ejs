@@ -1,0 +1,140 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Zeyada&display=swap" rel="stylesheet">
+<% layout('/layouts/boilerplate.ejs') %>
+    <style>
+
+        .home-section {
+            height: 89vh;
+            width: 100%;
+            background-color: black;
+            color: white;
+        }
+
+        .name {
+            font-family: 'Rubik Doodle Shadow', system-ui;
+            font-size: 5rem;
+        }
+
+        .para {
+            margin-right: 50px;
+            width: 50%;
+            /* padding-top: 1; */
+        }
+
+        .head-line {
+            font-family: 'Rubik Doodle Shadow', system-ui;
+            font-family: 'Zeyada', cursive;
+        }
+
+        .btn {
+            margin-left: 10px;
+            background-color: #092635;
+            /* background-color: #31304D; */
+            color: white;
+        }
+
+        .btn:hover {
+            margin-left: 10px;
+            background-color: #092635;
+            /* background-color: #31304D; */
+            color: white;
+        }
+
+        .about-section {
+            background-color: #1c1d20;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .about-me {
+            width: 60%;
+            color: white;
+            font-size: 1.5rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .skills {
+            width: 40%;
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+         .about-heading{
+            width: 100%;
+         }
+        .about-heading h1{
+            color: white;
+            font-size: 4rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .line {
+            /* height: 70%; */
+            width: 1px;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        .about-main{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        .skills h4{
+            text-align: center;
+            margin-top: 15px;
+        }
+        .button-set{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .btn:hover{
+            border: 1px solid white;
+            background-color: black;
+        }
+    </style>
+
+    <body>
+
+        <div class="home-section p-5">
+            <div class="para p-5 offset-1">
+                <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
+                <h1 class="name mt-2 px-3">Ritesh <br> Aldak</h1>
+                <form action="/resume">
+                    <button class="btn btn-sm btn-primary">Download CV</button>
+                </form>
+            </div>
+        </div>
+        <div class="about-section p-2 pt-5">
+            <div class="about-heading"><h1 class="offset-1">About Me</h1></div>
+            <div class="about-main">
+                <div class="about-me p-4">
+                    <p>I'm a self-taught web developer. I like developing web apps. I develop the different project on both
+                        front end and backend. Along with this, i write the blogs on the web technologies. I am trying to
+                        make myself best on the skills which i have.</p>
+                    <br>
+                    <p>I'm very hard working and always looks for the opportunities and challenges.</p>
+                </div>
+                <div class="line"></div>
+                <div class="skills">
+                    <h4>Technologies and Tools I have worked with:</h4>
+                    <div class="button-set p-3">
+                        <button class="btn btn-outline m-4">HTML</button>
+                        <button class="btn btn-outline m-4">CSS</button>
+                        <button class="btn btn-outline m-4">JAVASCRIPT</button>
+                        <button class="btn btn-outline m-4">REACT</button>
+                        <button class="btn btn-outline m-4">EXPRESS</button>
+                        <button class="btn btn-outline m-4">MONGODB</button>
+                        <button class="btn btn-outline m-4">MySQL</button>
+                        <button class="btn btn-outline m-4">GIT</button>
+                        <button class="btn btn-outline m-4">TAILWIND CSS</button>
+                        <button class="btn btn-outline m-4">Bootstrap</button>
+                        <button class="btn btn-outline m-4">POSTMAN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
