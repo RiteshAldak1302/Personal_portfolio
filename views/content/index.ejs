@@ -14,12 +14,15 @@
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
         }
 
         .name {
             font-family: 'Rubik Doodle Shadow', system-ui;
             font-size: 5rem;
+            text-shadow: 1px 1px 2px rgb(253, 218, 218), 0 0 1em rgb(255, 26, 1), 0 0 0.2em rgb(255, 1, 1);
+            color: #fff;
+            letter-spacing: 5px;
         }
 
         .home-para {
@@ -540,6 +543,20 @@
             display: block;
             text-align: center;
         }
+        .about-me{
+            margin-top: 10px;
+            padding-top: 5px; 
+        }
+        .my-img{
+            display: flex;
+            justify-content: center;
+        }
+        .my-img img{
+            height: 12rem;
+            width: 12rem;
+            border-radius: 70%;
+            opacity: 0.9;
+        }
     </style>
 
     <body>
@@ -574,14 +591,18 @@
             </div>
             <div class="about-main">
                 <div class="about-me p-4">
+                    <div class="my-img"><img src="/assets/my_img2.jpg" alt="" ></div>
                     <p>I'm a self-taught web developer. I like developing web apps and Problem solving. I develop the
                         different project on
                         both
                         front end and backend. Along with this, i write the blogs on the web technologies and also i
                         love to solve the problems on various coding platform. And whatever technologies i learn, i
-                        always tries to explain it with the help of my blogs.</p>
-                    <br>
-                    <p>I'm very hard working and always looks for the opportunities and challenges.</p>
+                        always tries to explain it with the help of my blogs.
+                    
+                        <br> 
+                        I'm very hard working and always looks for the opportunities and challenges.
+                    </p>
+                    
                 </div>
                 <div class="line"></div>
                 <div class="skills">
@@ -719,7 +740,7 @@
             <div class="row form-div">
                 <p class="para">If you want to know more about me or my work, or if you would just like to say hello,
                     send me a message. I'd love to hear from you.</p>
-                <form name="submit-to-google-sheet" class="col-8 needs-validation" novalidate>
+                <form name="submit-to-google-sheet" action="/" class="col-8 needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="exampleInputName1" class="form-label">Name</label>
                         <input name="Name" type="text" class="form-control" id="exampleInputName1">
