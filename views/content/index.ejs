@@ -6,23 +6,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Zeyada&display=swap" rel="stylesheet">
 <% layout('/layouts/boilerplate.ejs') %>
     <style>
-
         .home-section {
             height: 89vh;
             width: 100%;
             background-color: black;
             color: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .name {
             font-family: 'Rubik Doodle Shadow', system-ui;
             font-size: 5rem;
         }
-
-        .para {
-            margin-right: 50px;
+        .home-para {
             width: 50%;
-            /* padding-top: 1; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
         }
 
         .head-line {
@@ -45,7 +49,7 @@
         }
 
         .about-section {
-            background-color: #1c1d20;
+            background-color: #242424;
             height: 100vh;
             width: 100%;
         }
@@ -62,10 +66,12 @@
             color: white;
             font-family: 'Quicksand', sans-serif;
         }
-         .about-heading{
+
+        .about-heading {
             width: 100%;
-         }
-        .about-heading h1{
+        }
+
+        .about-heading h1 {
             color: white;
             font-size: 4rem;
             font-family: 'Quicksand', sans-serif;
@@ -77,64 +83,546 @@
             background-color: #fff;
             margin-top: 20px;
         }
-        .about-main{
+
+        .about-main {
             width: 100%;
             display: flex;
             flex-direction: row;
         }
-        .skills h4{
+
+        .skills h4 {
             text-align: center;
             margin-top: 15px;
         }
-        .button-set{
+
+        .button-set {
             display: flex;
             flex-wrap: wrap;
         }
-        .btn:hover{
+
+        .btn:hover {
             border: 1px solid white;
             background-color: black;
+        }
+
+        .services-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+        }
+
+        .service-headline {
+            color: white;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .services-section h1 {
+            color: white;
+            font-size: 4rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .services-section h5 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .card-text {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .card-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+
+        .card-set {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            /* margin-bottom: 20px; */
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card:hover {
+            border: 3px solid rgb(242, 35, 35);
+            border-style: solid;
+            cursor: pointer;
+
+        }
+
+        .card {
+            background-color: #242424;
+            color: white;
+            padding: 30px;
+            margin-top: 20px;
+            border: 1px solid rgb(242, 35, 35);
+            ;
+        }
+
+        .services-section {
+            height: 80vh;
+        }
+
+        .project-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .projects-headline {
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 20px;
+            margin-top: 25px;
+        }
+
+        .project-card-set {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .p-card {
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .contact-section {
+            height: 100vh;
+            background-color: #242424;
+            color: white;
+            padding: 20px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 50px;
+
+        }
+
+        .contact-heading {
+            font-size: 4rem;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            margin-bottom: 30px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .form-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .para {
+            font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .service-card {
+            border: 1px solid rgb(242, 35, 35);
+        }
+
+        .btn {
+            border: 1px solid rgb(242, 35, 35) !important;
+        }
+
+
+        /* code for the text animation */
+        .wrapper2 {
+            box-sizing: content-box;
+            background-color: #242424;
+            height: 8rem;
+            width: 80%;
+            padding: 50px 30px;
+            margin: 0px auto 20px auto;
+            display: flex;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-dev {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .words {
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .wrapper2 p {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        .words span {
+            display: block;
+            height: 100%;
+            padding-left: 10px;
+            color: rgb(242, 35, 35);
+            animation: spin_words 6s infinite;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+        @keyframes spin_words {
+            10% {
+                transform: translateY(-112%);
+            }
+
+            25% {
+                transform: translateY(-100%);
+            }
+
+            35% {
+                transform: translateY(-212%);
+            }
+
+            50% {
+                transform: translateY(-200%);
+            }
+
+            60% {
+                transform: translateY(-312%);
+            }
+
+            75% {
+                transform: translateY(-300%);
+            }
+
+            85% {
+                transform: translateY(-412%);
+            }
+
+            100% {
+                transform: translateY(-400%);
+            }
+        }
+
+
+
+
+        @media (max-width : 1000px) {
+            .line {
+                display: none;
+            }
+
+            .home-section {
+                flex-direction: column;
+            }
+
+            .about-main {
+                display: flex;
+                flex-direction: column;
+                /* justify-content: center; */
+                align-items: center;
+            }
+
+            .about-heading {
+                text-align: center;
+            }
+
+            .button-set {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+
+            .about-me {
+                width: 100%;
+            }
+
+            .skills {
+                width: 100%;
+                padding: 5px;
+            }
+
+            .para {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+
+            .name {
+                text-align: center;
+                padding-left: 30px;
+            }
+
+            .home-section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .about-section {
+                height: fit-content;
+            }
+
+
+            .about-me p {
+                /* text-overflow: ellipsis; */
+                text-wrap: wrap;
+                text-align: start;
+            }
+
+            .services-section {
+                height: fit-content;
+            }
+
+            .card {
+                height: fit-content !important;
+                width: 100%;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .project-card-set {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .services-section {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .card-set {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .contact-section {
+                width: 100% !important;
+            }
+
+            .contact-heading {
+                width: 100%;
+            }
+
+            .form-div {
+                width: 100% !important;
+            }
+
+            form {
+                width: 100% !important;
+            }
+            .wrapper2 {
+                width: 100%;
+        } 
+           .home-dev{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+           }
+           .home-para{
+            width: 100%;
+           }
+           .home-section{
+            margin: 0%;
+           }
+
+
         }
     </style>
 
     <body>
 
-        <div class="home-section p-5">
-            <div class="para p-5 offset-1">
-                <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
-                <h1 class="name mt-2 px-3">Ritesh <br> Aldak</h1>
-                <form action="/resume">
-                    <button class="btn btn-sm btn-primary">Download CV</button>
-                </form>
+        <div class="home-section" id="home-id">
+            <div class="home-dev container">
+                <div class="wrapper2">
+                    <p>I'm</p>
+                    <div class="words">
+                        <span> Developer</span>
+                        <span> Frontend Developer</span>
+                        <span> Backend Developer</span>
+                        <span> Full Stack Developer</span>
+                        <span> Learner</span>
+                    </div>
+                </div>
             </div>
+            <div class="home-para">
+                <div class="p-5">
+                    <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
+                    <h1 class="name mt-2 px-3 name-hov">Ritesh <br> Aldak</h1>
+                    <form action="/resume">
+                        <button class="btn btn-sm btn-danger">Download CV</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
-        <div class="about-section p-2 pt-5">
-            <div class="about-heading"><h1 class="offset-1">About Me</h1></div>
+        <div class="about-section p-2 pt-5" id="about-id">
+            <div class="about-heading">
+                <h1 class="offset-1">About Me</h1>
+            </div>
             <div class="about-main">
                 <div class="about-me p-4">
-                    <p>I'm a self-taught web developer. I like developing web apps. I develop the different project on both
-                        front end and backend. Along with this, i write the blogs on the web technologies. I am trying to
-                        make myself best on the skills which i have.</p>
+                    <p>I'm a self-taught web developer. I like developing web apps and Problem solving. I develop the different project on
+                        both
+                        front end and backend. Along with this, i write the blogs on the web technologies and also i love to solve the problems on various coding platform. And whatever technologies i learnt, i always tries to explain it with the help of my blogs.</p>
                     <br>
                     <p>I'm very hard working and always looks for the opportunities and challenges.</p>
                 </div>
                 <div class="line"></div>
                 <div class="skills">
-                    <h4>Technologies and Tools I have worked with:</h4>
+                    <h4><b>Technologies and Tools I have worked with:</b></h4>
                     <div class="button-set p-3">
-                        <button class="btn btn-outline m-4">HTML</button>
-                        <button class="btn btn-outline m-4">CSS</button>
-                        <button class="btn btn-outline m-4">JAVASCRIPT</button>
-                        <button class="btn btn-outline m-4">REACT</button>
-                        <button class="btn btn-outline m-4">EXPRESS</button>
-                        <button class="btn btn-outline m-4">MONGODB</button>
-                        <button class="btn btn-outline m-4">MySQL</button>
-                        <button class="btn btn-outline m-4">GIT</button>
-                        <button class="btn btn-outline m-4">TAILWIND CSS</button>
-                        <button class="btn btn-outline m-4">Bootstrap</button>
-                        <button class="btn btn-outline m-4">POSTMAN</button>
+                        <button class="btn btn-outline btn-danger m-4 skill-btn">HTML</button>
+                        <button class="btn btn-outline btn-danger m-4">CSS</button>
+                        <button class="btn btn-outline btn-danger m-4">JAVASCRIPT</button>
+                        <button class="btn btn-outline btn-danger m-4">REACT</button>
+                        <button class="btn btn-outline btn-danger m-4">EXPRESS</button>
+                        <button class="btn btn-outline btn-danger m-4">MONGODB</button>
+                        <button class="btn btn-outline btn-danger m-4">MySQL</button>
+                        <button class="btn btn-outline btn-danger m-4">GIT</button>
+                        <button class="btn btn-outline btn-danger m-4">TAILWIND CSS</button>
+                        <button class="btn btn-outline btn-danger m-4">Bootstrap</button>
+                        <button class="btn btn-outline btn-danger m-4">POSTMAN</button>
+                        <button class="btn btn-outline btn-danger m-4">C++</button>
+                        <button class="btn btn-outline btn-danger m-4">Data Structure and Algorithm</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="services-section" id="service-id">
+            <h1 class="service-headline">What I do</h1>
+            <h5>I may not be perfect, but I'm surely of some help :)</h5>
+            <div class="card-set">
+                <div class="card service-card" style="width: 21rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Full Stack Web Developer</h5>
+                        <p class="card-text">For now, i can only develop the web application by using MERN. I have
+                            developed some major project and many minor project. I love to build the websites. </p>
+                    </div>
+                </div>
+                <div class="card service-card" style="width:  21rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Technical Blog Writer</h5>
+                        <p class="card-text">I have been writing the blog since couple of month. I write the blog on
+                            medium. I love to explain all things that i have learnt. Mostly i write the blog on web
+                            tools and technologies. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-section" id="project-id">
+            <h1 class="projects-headline">Projects</h1>
+            <div class="project-card-set">
+                <div class="card p-card" style="width: 22rem; height: 25rem;">
+                    <img src="/assets/travel-stay.png" class="card-img-top" alt="..." style="height: 12rem;" >
+                    <div class="card-body">
+                        <h5 class="card-title">Travel Stay</h5>
+                        <p class="card-text">This Application is developed using ejs template, Javascript, Express and
+                            Mongodb </p>
+                        <a href="https://github.com/RiteshAldak1302/Travel-Stay" class="btn btn-primary btn-sm">Source
+                            Code</a>
+                        <a href="https://travel-stay.onrender.com/listing" class="btn btn-primary btn-sm">Visit Site</a>
+                    </div>
+                </div>
+                <div class="card p-card" style="width: 22rem; height: 25rem;">
+                    <img src="https://images.yourstory.com/cs/wordpress/2015/07/web_application.jpg?fm=png&auto=format"
+                        class="card-img-top" alt="..." style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Text Utils</h5>
+                        <p class="card-text">This Application is developed using ReactJs. In this app, user can
+                            manipulate the text like capitalizing , coping and removing extra spaces.</p>
+                        <a href="https://github.com/RiteshAldak1302/Textutils-React"
+                            class="btn btn-primary btn-sm">Source Code</a>
+                        <a href="https://riteshaldak1302.github.io/Textutils-React/"
+                            class="btn btn-primary btn-sm">Visit Site</a>
+                    </div>
+                </div>
+                <div class="card p-card" style="width: 22rem; height: 25rem;">
+                    <img src="https://images.ctfassets.net/lzny33ho1g45/O6Ns6DttUzJym7rhGiD36/b7f1086976213ffd1076f4c1b15b6500/best-todo-list-apps-00-hero.png"
+                        class="card-img-top" alt="..." style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">To do list</h5>
+                        <p class="card-text">This Application is developed using React, Javascript </p>
+                        <a href="https://github.com/RiteshAldak1302/react_to_do_list"
+                            class="btn btn-primary btn-sm">Source Code</a>
+                    </div>
+                </div>
+                <div class="card p-card" style="width: 22rem; height: 25rem;">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.lL_HvP8Q6HXxRDGqtXC1NQHaCr&pid=Api&P=0&h=180"
+                        class="card-img-top" alt="..."  style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">News Hub</h5>
+                        <p class="card-text">This Application is developed using ReactJs, Javascript and News API </p>
+                        <a href="https://github.com/RiteshAldak1302/newsApp" class="btn btn-primary btn-sm">Source
+                            Code</a>
+                    </div>
+                </div>
+                <div class="card p-card" style="width: 22rem; height: 25rem;">
+                    <img src="/assets/weather.png"
+                        class="card-img-top" alt="..." style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Weather App</h5>
+                        <p class="card-text">This Application is developed using Html, CSS, weather api and Javascript. This application give the real time weather information of all the places.</p>
+                        <a href="https://github.com/RiteshAldak1302/real_time_weather_app" class="btn btn-primary btn-sm">Source
+                            Code</a>
+                    </div>
+                </div>
 
+            </div>
+            <a class="btn btn-sm  btn-primary mb-4" href="https://github.com/RiteshAldak1302">Show more</a>
+        </div>
+        <div class="contact-section" id="contact-id">
+            <div class="contact-heading">Contact</div>
+
+            <div class="row form-div">
+                <p class="para">If you want to know more about me or my work, or if you would just like to say hello,
+                    send me a message. I'd love to hear from you.</p>
+                <form class="col-8 needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="exampleInputName1" class="form-label">Name</label>
+                        <input name="Name" type="text" class="form-control" id="exampleInputName1">
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div class="invalid-feedback">Please write the email!</div>
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Message</label>
+                        <textarea name="Message" class="form-control" cols="40" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </form>
+            </div>
+        </div>
     </body>
