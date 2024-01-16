@@ -21,6 +21,7 @@
             font-family: 'Rubik Doodle Shadow', system-ui;
             font-size: 5rem;
         }
+
         .home-para {
             width: 50%;
             display: flex;
@@ -245,6 +246,12 @@
 
         .service-card {
             border: 1px solid rgb(242, 35, 35);
+            
+            transition: all 0.5s;
+           
+        }
+        .service-card:hover{
+            transform: translateY(-20px);
         }
 
         .btn {
@@ -439,22 +446,99 @@
             form {
                 width: 100% !important;
             }
+
             .wrapper2 {
                 width: 100%;
-        } 
-           .home-dev{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-           }
-           .home-para{
-            width: 100%;
-           }
-           .home-section{
-            margin: 0%;
-           }
+            }
 
+            .home-dev {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
 
+            .home-para {
+                width: 100%;
+            }
+
+            .home-section {
+                margin: 0%;
+            }
+
+        }
+
+        /* flip card code */
+        .flip-card {
+            background-color: transparent;
+            width: 26rem;
+            height: 22rem;
+            perspective: 1000px;
+            /* Remove this if you don't want the 3D effect */
+            font-family: 'Quicksand', sans-serif;
+            cursor: pointer;
+            margin-top: 50px;
+            border-radius: 25px;
+        }
+
+        /* This container is needed to position the front and back side */
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 25px;
+        }
+
+        /* Do an horizontal flip when you move the mouse over the flip box container */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg); 
+        }
+
+        .flip-card-front img {
+            height: 100%;
+            border-radius: 25px;
+        }
+
+        /* Position the front and back side */
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+            border-radius: 25px;
+        }
+        .flip-card-front:hover{
+            border: 1px solid rgb(242, 35, 35);
+        }
+        .flip-card-back:hover{
+            border: 1px solid rgb(242, 35, 35);
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+            background-color: #242424;
+            color: white;
+            transform: rotateY(180deg);
+            border-radius: 25px;
+            padding: 25px;
+        }
+        #msg{
+            font-size: 1.3rem;
+            font-family: 'Quicksand', sans-serif;
+            color: rgb(242, 35, 35);
+            display: block;
+            text-align: center;
         }
     </style>
 
@@ -478,7 +562,7 @@
                     <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
                     <h1 class="name mt-2 px-3 name-hov">Ritesh <br> Aldak</h1>
                     <form action="/resume">
-                        <button class="btn btn-sm btn-danger">Download CV</button>
+                        <a href="/assets/ritesh@resume.pdf" download class="btn btn-sm btn-danger">Download CV</a>
                     </form>
                 </div>
             </div>
@@ -490,9 +574,12 @@
             </div>
             <div class="about-main">
                 <div class="about-me p-4">
-                    <p>I'm a self-taught web developer. I like developing web apps and Problem solving. I develop the different project on
+                    <p>I'm a self-taught web developer. I like developing web apps and Problem solving. I develop the
+                        different project on
                         both
-                        front end and backend. Along with this, i write the blogs on the web technologies and also i love to solve the problems on various coding platform. And whatever technologies i learnt, i always tries to explain it with the help of my blogs.</p>
+                        front end and backend. Along with this, i write the blogs on the web technologies and also i
+                        love to solve the problems on various coding platform. And whatever technologies i learn, i
+                        always tries to explain it with the help of my blogs.</p>
                     <br>
                     <p>I'm very hard working and always looks for the opportunities and challenges.</p>
                 </div>
@@ -528,6 +615,14 @@
                             developed some major project and many minor project. I love to build the websites. </p>
                     </div>
                 </div>
+                <div class="card service-card" style="width: 21rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Problem Solver</h5>
+                        <p class="card-text">I have good problem solving skill. I have been solving the problems on
+                            various coding platforms for 1 year. I have solved the problems on the online coding
+                            platform like Leetcode, GFG, Hackerrank, Codechef.</p>
+                    </div>
+                </div>
                 <div class="card service-card" style="width:  21rem;">
                     <div class="card-body">
                         <h5 class="card-title">Technical Blog Writer</h5>
@@ -541,58 +636,77 @@
         <div class="project-section" id="project-id">
             <h1 class="projects-headline">Projects</h1>
             <div class="project-card-set">
-                <div class="card p-card" style="width: 22rem; height: 25rem;">
-                    <img src="/assets/travel-stay.png" class="card-img-top" alt="..." style="height: 12rem;" >
-                    <div class="card-body">
-                        <h5 class="card-title">Travel Stay</h5>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/assets/travel-stay.png" alt="..." class="card-img-top" >
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 class="card-title">Travel Stay</h5>
                         <p class="card-text">This Application is developed using ejs template, Javascript, Express and
-                            Mongodb </p>
+                            Mongodb. In this application, user can create a list including image uploading, title , description, price, location etc. User can edit, delete the list. User able to write the review for that list. and This application provide the authentication and authorization which secure the website. This is developed on the MVC framework.  </p>
                         <a href="https://github.com/RiteshAldak1302/Travel-Stay" class="btn btn-primary btn-sm">Source
                             Code</a>
                         <a href="https://travel-stay.onrender.com/listing" class="btn btn-primary btn-sm">Visit Site</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-card" style="width: 22rem; height: 25rem;">
-                    <img src="https://images.yourstory.com/cs/wordpress/2015/07/web_application.jpg?fm=png&auto=format"
-                        class="card-img-top" alt="..." style="height: 12rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Text Utils</h5>
-                        <p class="card-text">This Application is developed using ReactJs. In this app, user can
-                            manipulate the text like capitalizing , coping and removing extra spaces.</p>
-                        <a href="https://github.com/RiteshAldak1302/Textutils-React"
-                            class="btn btn-primary btn-sm">Source Code</a>
-                        <a href="https://riteshaldak1302.github.io/Textutils-React/"
-                            class="btn btn-primary btn-sm">Visit Site</a>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/assets/text-utils.png" alt="..." class="card-img-top" >
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 class="card-title">Text Utils</h5>
+                            <p class="card-text">This Application is developed using ReactJs. In this application, user can
+                                manipulate the text like capitalizing , coping and removing extra spaces. This application also has dark and light mode functionality. This application is only developed on the ReactJS. </p>
+                            <a href="https://github.com/RiteshAldak1302/Textutils-React"
+                                class="btn btn-primary btn-sm">Source Code</a>
+                            <a href="https://riteshaldak1302.github.io/Textutils-React/"
+                                class="btn btn-primary btn-sm">Visit Site</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-card" style="width: 22rem; height: 25rem;">
-                    <img src="https://images.ctfassets.net/lzny33ho1g45/O6Ns6DttUzJym7rhGiD36/b7f1086976213ffd1076f4c1b15b6500/best-todo-list-apps-00-hero.png"
-                        class="card-img-top" alt="..." style="height: 12rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">To do list</h5>
-                        <p class="card-text">This Application is developed using React, Javascript </p>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/assets/todolist.jpg" alt="..." class="card-img-top" >
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 class="card-title">To do list</h5>
+                        <p class="card-text">This Application is developed using React, Javascript. In this application, user can create, edit and delete the to-do list. user can add to-do task in this application. This application is simple to use.</p>
                         <a href="https://github.com/RiteshAldak1302/react_to_do_list"
                             class="btn btn-primary btn-sm">Source Code</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-card" style="width: 22rem; height: 25rem;">
-                    <img src="https://tse4.mm.bing.net/th?id=OIP.lL_HvP8Q6HXxRDGqtXC1NQHaCr&pid=Api&P=0&h=180"
-                        class="card-img-top" alt="..."  style="height: 12rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">News Hub</h5>
-                        <p class="card-text">This Application is developed using ReactJs, Javascript and News API </p>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/assets/newsapp.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 class="card-title">News Hub</h5>
+                        <p class="card-text">This Application is developed using ReactJs, Javascript and News API. With the help of free news api it is fetching the news data. This application will provide different news to the user and it also provide the news on the basis of categories. </p>
                         <a href="https://github.com/RiteshAldak1302/newsApp" class="btn btn-primary btn-sm">Source
                             Code</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-card" style="width: 22rem; height: 25rem;">
-                    <img src="/assets/weather.png"
-                        class="card-img-top" alt="..." style="height: 12rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Weather App</h5>
-                        <p class="card-text">This Application is developed using Html, CSS, weather api and Javascript. This application give the real time weather information of all the places.</p>
-                        <a href="https://github.com/RiteshAldak1302/real_time_weather_app" class="btn btn-primary btn-sm">Source
-                            Code</a>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/assets/weather.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="flip-card-back">
+                            <h5 class="card-title">Weather App</h5>
+                            <p class="card-text">This Application is developed using Html, CSS, weather api and
+                                Javascript. with the help of free weather api it is fetching the weather data and provide that data on the web page. This application give the real time weather information of all the places. The UI of website the also nice and clear.
+                            </p>
+                            <a href="https://github.com/RiteshAldak1302/real_time_weather_app"
+                                class="btn btn-primary btn-sm">Source
+                                Code</a>
+                        </div>
                     </div>
                 </div>
 
@@ -605,7 +719,7 @@
             <div class="row form-div">
                 <p class="para">If you want to know more about me or my work, or if you would just like to say hello,
                     send me a message. I'd love to hear from you.</p>
-                <form class="col-8 needs-validation" novalidate>
+                <form name="submit-to-google-sheet" class="col-8 needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="exampleInputName1" class="form-label">Name</label>
                         <input name="Name" type="text" class="form-control" id="exampleInputName1">
@@ -613,7 +727,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input name="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input name="Email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
                         <div class="invalid-feedback">Please write the email!</div>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
@@ -622,7 +737,25 @@
                         <textarea name="Message" class="form-control" cols="40" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-danger">Submit</button>
+
+                    <span id="msg"></span>
                 </form>
             </div>
         </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzLVQVjXOrRZyX4ksgEiyPrpnPHzRhrjrETsK2n-fTOImdQvuL-RhoOB94wc25wb20X/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById('msg')
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {msg.innerHTML = 'Message sent successfully!'
+                   setTimeout(() => {
+                    msg.innerHTML = ""
+                   }, 4000);
+                   form.reset();
+            })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
     </body>
