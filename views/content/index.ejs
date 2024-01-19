@@ -310,13 +310,16 @@
             font-size: 3rem;
             font-weight: 500;
         }
-        .btn-download{
+
+        .btn-download {
             margin-left: 45px;
         }
-        .btn-download:hover{      
+
+        .btn-download:hover {
             margin-left: 45px;
         }
-        .name span{
+
+        .name span {
             margin-left: 25px;
         }
 
@@ -575,7 +578,27 @@
             border-radius: 70%;
             opacity: 0.9;
         }
-        
+
+        .style-button {
+            border-radius: 8px;
+            border: 1px solid transparent;
+            padding: 0.6em 1.2em;
+            font-size: 1em;
+            font-weight: 500;
+            font-family: inherit;
+            background-color: #1a1a1a;
+            cursor: pointer;
+            transition: border-color 0.25s;
+        }
+
+        .style-button:hover {
+            border-color: #646cff;
+        }
+
+        .style-button:focus,
+        .style-button:focus-visible {
+            outline: 4px auto -webkit-focus-ring-color;
+        }
     </style>
 
     <body>
@@ -596,9 +619,10 @@
             <div class="home-para">
                 <div class="p-5">
                     <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
-                    <h1 class="name mt-2 px-3 name-hov">Ritesh  <br> <span> Aldak </span> </h1>
+                    <h1 class="name mt-2 px-3 name-hov">Ritesh <br> <span> Aldak </span> </h1>
                     <form action="/resume">
-                       <a href="/assets/ritesh@resume.pdf" download class="btn btn-sm btn-danger btn-download">Download CV</a>
+                        <a href="/assets/ritesh@resume.pdf" download class="btn btn-sm style-button btn-download">Download
+                            CV</a>
                     </form>
                 </div>
             </div>
@@ -627,19 +651,19 @@
                 <div class="skills">
                     <h4><b>Technologies and Tools I have worked with:</b></h4>
                     <div class="button-set p-3">
-                        <button class="btn btn-outline btn-danger m-4 skill-btn">HTML</button>
-                        <button class="btn btn-outline btn-danger m-4">CSS</button>
-                        <button class="btn btn-outline btn-danger m-4">JAVASCRIPT</button>
-                        <button class="btn btn-outline btn-danger m-4">REACT</button>
-                        <button class="btn btn-outline btn-danger m-4">EXPRESS</button>
-                        <button class="btn btn-outline btn-danger m-4">MONGODB</button>
-                        <button class="btn btn-outline btn-danger m-4">MySQL</button>
-                        <button class="btn btn-outline btn-danger m-4">GIT</button>
-                        <button class="btn btn-outline btn-danger m-4">TAILWIND CSS</button>
-                        <button class="btn btn-outline btn-danger m-4">Bootstrap</button>
-                        <button class="btn btn-outline btn-danger m-4">POSTMAN</button>
-                        <button class="btn btn-outline btn-danger m-4">C++</button>
-                        <button class="btn btn-outline btn-danger m-4">Data Structure and Algorithm</button>
+                        <button class="btn style-button m-4 skill-btn">HTML</button>
+                        <button class="btn style-button m-4">CSS</button>
+                        <button class="btn style-button m-4">JAVASCRIPT</button>
+                        <button class="btn style-button m-4">REACT</button>
+                        <button class="btn style-button m-4">EXPRESS</button>
+                        <button class="btn style-button m-4">MONGODB</button>
+                        <button class="btn style-button m-4">MySQL</button>
+                        <button class="btn style-button m-4">GIT</button>
+                        <button class="btn style-button m-4">TAILWIND CSS</button>
+                        <button class="btn style-button m-4">Bootstrap</button>
+                        <button class="btn style-button m-4">POSTMAN</button>
+                        <button class="btn style-button m-4">C++</button>
+                        <button class="btn style-button m-4">Data Structure and Algorithm</button>
                     </div>
                 </div>
             </div>
@@ -690,9 +714,9 @@
                                 review for that list. and This application provide the authentication and authorization
                                 which secure the website. This is developed on the MVC framework. </p>
                             <a href="https://github.com/RiteshAldak1302/Travel-Stay"
-                                class="btn btn-primary btn-sm">Source
+                                class="btn style-button">Source
                                 Code</a>
-                            <a href="https://travel-stay.onrender.com/listing" class="btn btn-primary btn-sm">Visit
+                            <a href="https://travel-stay.onrender.com/listing" class="btn style-button">Visit
                                 Site</a>
                         </div>
                     </div>
@@ -710,9 +734,9 @@
                                 application also has dark and light mode functionality. This application is only
                                 developed on the ReactJS. </p>
                             <a href="https://github.com/RiteshAldak1302/Textutils-React"
-                                class="btn btn-primary btn-sm">Source Code</a>
+                                class="btn style-button">Source Code</a>
                             <a href="https://riteshaldak1302.github.io/Textutils-React/"
-                                class="btn btn-primary btn-sm">Visit Site</a>
+                                class="btn style-button">Visit Site</a>
                         </div>
                     </div>
                 </div>
@@ -723,10 +747,13 @@
                         </div>
                         <div class="flip-card-back">
                             <h5 class="card-title">To do list</h5>
-                            <p class="card-text">This Application is developed using Html, CSS and Javascript. This website is responsive website. This application has clear UI and simple to use. I build this application for the learning perspective.</p>
+                            <p class="card-text">This Application is developed using Html, CSS and Javascript. This
+                                website is responsive website. This application has clear UI and simple to use. I build
+                                this application for the learning perspective.</p>
                             <a href="https://github.com/RiteshAldak1302/first-responsive-website-"
-                                class="btn btn-primary btn-sm">Source Code</a>
-                                <a href="https://riteshaldak1302.github.io/first-responsive-website-/" class="btn btn-primary btn-sm">Visite</a>
+                                class="btn style-button">Source Code</a>
+                            <a href="https://riteshaldak1302.github.io/first-responsive-website-/"
+                                class="btn style-button">Visite</a>
                         </div>
                     </div>
                 </div>
@@ -741,7 +768,7 @@
                                 With the help of free news api it is fetching the news data. This application will
                                 provide different news to the user and it also provide the news on the basis of
                                 categories. </p>
-                            <a href="https://github.com/RiteshAldak1302/newsApp" class="btn btn-primary btn-sm">Source
+                            <a href="https://github.com/RiteshAldak1302/newsApp" class="btn style-button">Source
                                 Code</a>
                         </div>
                     </div>
@@ -759,14 +786,14 @@
                                 information of all the places. The UI of website the also nice and clear.
                             </p>
                             <a href="https://github.com/RiteshAldak1302/real_time_weather_app"
-                                class="btn btn-primary btn-sm">Source
+                                class="btn style-button">Source
                                 Code</a>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <a class="btn btn-sm  btn-primary mb-4" href="https://github.com/RiteshAldak1302">Show more</a>
+            <a class=" btn style-button mb-4" href="https://github.com/RiteshAldak1302">Show more</a>
         </div>
         <div class="contact-section" id="contact-id">
             <div class="contact-heading">Contact</div>
@@ -791,7 +818,7 @@
                         <label for="exampleInputPassword1" class="form-label">Message</label>
                         <textarea name="Message" class="form-control" cols="40" rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <button type="submit" class="btn style-button">Submit</button>
 
                     <span id="msg"></span>
                 </form>
