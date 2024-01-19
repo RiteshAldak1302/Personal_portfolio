@@ -11,6 +11,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Rock+Salt&display=swap" rel="stylesheet">
 <% layout('/layouts/boilerplate.ejs') %>
     <style>
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: normal;
+            scrollbar-color: #777 #555;
+        }
+
+        html::-webkit-scrollbar {
+            width: 0.8vw;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: #7775;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: #777;
+        }
+
+        html::-webkit-scrollbar-track {
+            background-color: #5555;
+        }
+
+        html::-webkit-scrollbar-track:hover {
+            background-color: #555;
+        }
+
         .home-section {
             height: 89vh;
             width: 100%;
@@ -599,7 +625,11 @@
         .style-button:focus-visible {
             outline: 4px auto -webkit-focus-ring-color;
         }
-        .fa-check{
+
+        .fa-check {
+            display: none;
+        }
+        .nav-hidden{
             display: none;
         }
     </style>
@@ -823,8 +853,8 @@
                         <textarea name="Message" class="form-control" cols="40" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn style-button">Submit</button>
-                     
-                 <span id="msg"></span>
+
+                    <span id="msg"></span>
                 </form>
             </div>
         </div>
@@ -847,13 +877,15 @@
                             form.reset();
                         })
                         .catch(error => console.error('Error!', error.message))
-                }else{
+                } else {
                     msg.innerHTML = "Please fill all details!"
                     setTimeout(() => {
-                                msg.innerHTML = ""
-                            }, 4000);
+                        msg.innerHTML = ""
+                    }, 4000);
                 }
 
             })
+
+           
         </script>
     </body>

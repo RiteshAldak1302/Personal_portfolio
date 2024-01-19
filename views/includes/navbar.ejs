@@ -11,6 +11,7 @@
 
   .navbar {
     background: transparent !important;
+    transition: transform all ease-in-out 1s;
   }
 
   li {
@@ -67,6 +68,9 @@
       font-size: 0.9rem;
     }
   }
+  .nav-hidden{
+    transform: translateY(-50px);
+  }
 </style>
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
@@ -113,3 +117,22 @@
     </li>
   </div>
 </nav>
+
+<script>
+   const nav = document.querySelector('.navbar'); // Use querySelector to get the first 'nav' element
+let lastScrollY = window.scrollY;
+         
+window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+      // console.log(nav.classList);
+        nav.classList.add('nav-hidden');
+
+        // console.log(`we are going down : ${window.scrollY}`);
+    } else {
+        nav.classList.remove('nav-hidden');
+        // console.log(`we are going up : ${window.scrollY}`);
+    }
+    lastScrollY = window.scrollY;
+});
+
+</script>

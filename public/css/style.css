@@ -7,4 +7,6 @@ body{
 }
 html{
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: black rgb(206, 7, 7);
 }
