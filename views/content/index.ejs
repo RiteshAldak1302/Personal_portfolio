@@ -599,6 +599,9 @@
         .style-button:focus-visible {
             outline: 4px auto -webkit-focus-ring-color;
         }
+        .fa-check{
+            display: none;
+        }
     </style>
 
     <body>
@@ -621,7 +624,8 @@
                     <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
                     <h1 class="name mt-2 px-3 name-hov">Ritesh <br> <span> Aldak </span> </h1>
                     <form action="/resume">
-                        <a href="/assets/ritesh@resume.pdf" download class="btn btn-sm style-button btn-download">Download
+                        <a href="/assets/ritesh@resume.pdf" download
+                            class="btn btn-sm style-button btn-download">Download
                             CV</a>
                     </form>
                 </div>
@@ -713,8 +717,7 @@
                                 description, price, location etc. User can edit, delete the list. User able to write the
                                 review for that list. and This application provide the authentication and authorization
                                 which secure the website. This is developed on the MVC framework. </p>
-                            <a href="https://github.com/RiteshAldak1302/Travel-Stay"
-                                class="btn style-button">Source
+                            <a href="https://github.com/RiteshAldak1302/Travel-Stay" class="btn style-button">Source
                                 Code</a>
                             <a href="https://travel-stay.onrender.com/listing" class="btn style-button">Visit
                                 Site</a>
@@ -733,10 +736,10 @@
                                 manipulate the text like capitalizing , coping and removing extra spaces. This
                                 application also has dark and light mode functionality. This application is only
                                 developed on the ReactJS. </p>
-                            <a href="https://github.com/RiteshAldak1302/Textutils-React"
-                                class="btn style-button">Source Code</a>
-                            <a href="https://riteshaldak1302.github.io/Textutils-React/"
-                                class="btn style-button">Visit Site</a>
+                            <a href="https://github.com/RiteshAldak1302/Textutils-React" class="btn style-button">Source
+                                Code</a>
+                            <a href="https://riteshaldak1302.github.io/Textutils-React/" class="btn style-button">Visit
+                                Site</a>
                         </div>
                     </div>
                 </div>
@@ -804,23 +807,24 @@
                 <form name="submit-to-google-sheet" action="/" class="col-8 needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="exampleInputName1" class="form-label">Name</label>
-                        <input name="Name" type="text" class="form-control" id="exampleInputName1">
+                        <input name="Name" type="text" class="form-control" id="exampleInputName1" required>
                         <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please write your name!</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input name="Email" type="email" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp">
-                        <div class="invalid-feedback">Please write the email!</div>
+                            aria-describedby="emailHelp" required>
+                        <div class="invalid-feedback">Please write your email!</div>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Message</label>
-                        <textarea name="Message" class="form-control" cols="40" rows="4"></textarea>
+                        <textarea name="Message" class="form-control" cols="40" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn style-button">Submit</button>
-
-                    <span id="msg"></span>
+                     
+                 <span id="msg"></span>
                 </form>
             </div>
         </div>
@@ -828,17 +832,28 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbzLVQVjXOrRZyX4ksgEiyPrpnPHzRhrjrETsK2n-fTOImdQvuL-RhoOB94wc25wb20X/exec'
             const form = document.forms['submit-to-google-sheet']
             const msg = document.getElementById('msg')
+            const icon = document.getElementsByClassName('fa-check')
             form.addEventListener('submit', e => {
                 e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .then(response => {
-                        msg.innerHTML = 'Message sent successfully!'
-                        setTimeout(() => {
-                            msg.innerHTML = ""
-                        }, 4000);
-                        form.reset();
-                    })
-                    .catch(error => console.error('Error!', error.message))
+
+                if (form.checkValidity()) {
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                        .then(response => {
+                            // icon.style.display = 'flex'
+                            msg.innerHTML = 'Message sent successfully!'
+                            setTimeout(() => {
+                                msg.innerHTML = ""
+                            }, 4000);
+                            form.reset();
+                        })
+                        .catch(error => console.error('Error!', error.message))
+                }else{
+                    msg.innerHTML = "Please fill all details!"
+                    setTimeout(() => {
+                                msg.innerHTML = ""
+                            }, 4000);
+                }
+
             })
         </script>
     </body>
