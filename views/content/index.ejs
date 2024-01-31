@@ -48,12 +48,13 @@
         }
 
         .name {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 5rem;
-            /* text-shadow: 1px 1px 2px rgb(253, 218, 218), 0 0 1em rgb(255, 26, 1), 0 0 0.2em rgb(255, 1, 1); */
+            /* font-family: 'Cinzel Decorative', serif; */
+            font-family: 'Quicksand', sans-serif;
+            font-size: 4rem;
             color: #fff;
             letter-spacing: 5px;
             margin-bottom: 25px;
+            
         }
 
         .home-para {
@@ -65,8 +66,8 @@
         }
 
         .head-line {
-            font-family: 'Rubik Doodle Shadow', system-ui;
-            font-family: 'Zeyada', cursive;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4rem;
         }
 
         .btn {
@@ -103,7 +104,10 @@
         }
 
         .about-heading {
-            width: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            margin-left: 50px;
         }
 
         .about-heading h1 {
@@ -342,7 +346,7 @@
         }
 
         .btn-download:hover {
-            margin-left: 45px;
+            margin-left: 80px;
         }
 
         .name span {
@@ -387,9 +391,22 @@
             .line {
                 display: none;
             }
+            
+            .social-link {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .icon_set{
+                 display: flex;
+                 flex-direction: row;
+
+            }
 
             .home-section {
-                flex-direction: column;
+                flex-direction: column-reverse;
             }
 
             .about-main {
@@ -400,6 +417,10 @@
             }
 
             .about-heading {
+                font-size: 1.8rem;
+                width: 85%;
+                display: flex;
+                justify-content: center;
                 text-align: center;
             }
 
@@ -629,14 +650,76 @@
         .fa-check {
             display: none;
         }
-        .nav-hidden{
+
+        .nav-hidden {
             display: none;
+        }
+
+        .social-link {
+            display: flex;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: 60px;
+            margin-top: 20px;
+        }
+
+        .icon1 {
+            margin-left: 25px;
+            cursor: pointer;
+        }
+
+        .fa-brands {
+            font-size: 2rem;
+        }
+
+        .sm-text {
+            font-size: 1.7rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .icon1 a{
+            text-decoration: none;
+            color: white;
+        }
+        .icon1 a:hover {
+            color: rgb(242, 35, 35);
+        }
+        .icon_set{
+            display: flex;
+        }
+        .btn-download{
+            margin-left: 80px;
+            margin-top: 10px;
         }
     </style>
 
     <body>
 
         <div class="home-section" id="home-id">
+            <div class="home-para">
+                <div class="p-1">
+                    <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
+                    <h4><span class="sm-text"> It's me </span></h4>
+                    <h1 class="name  px-3 name-hov"> Ritesh <br> Aldak </h1>
+                    <div class="social-link">
+                        <div class="icon_set">
+                            <div class="icon1"><a
+                                href="https://github.com/RiteshAldak1302"><i class="fa-brands fa-github"></i></a></div>
+                            <div class="icon1"><a
+                                href="http://linkedin.com/in/ritesh-aldak-3086391ab"><i class="fa-brands fa-linkedin"></i></a></div>
+                            <div class="icon1"><a href="https://twitter.com/Ritesh_1302"><i class="fa-brands fa-twitter"></i></a></div>
+                            <div class="icon1"><a href="https://medium.com/@ritesh_1302"><i class="fa-brands fa-medium"></i></a></div>
+                        </div>
+                    </div>
+                    <form action="/resume">
+                        <a href="/assets/ritesh@resume.pdf" download
+                            class="btn btn-sm style-button btn-download mb-5">Download
+                            CV</a>
+                    </form>
+                </div>
+            </div>
             <div class="home-dev container">
                 <div class="wrapper2">
                     <p>I'm</p>
@@ -649,22 +732,11 @@
                     </div>
                 </div>
             </div>
-            <div class="home-para">
-                <div class="p-5">
-                    <h2 class="head-line">WELCOME TO MY PORTFOLIO!</h2>
-                    <h1 class="name mt-2 px-3 name-hov">Ritesh <br> <span> Aldak </span> </h1>
-                    <form action="/resume">
-                        <a href="/assets/ritesh@resume.pdf" download
-                            class="btn btn-sm style-button btn-download">Download
-                            CV</a>
-                    </form>
-                </div>
-            </div>
 
         </div>
         <div class="about-section p-2 pt-5" id="about-id">
             <div class="about-heading">
-                <h1 class="offset-1">About Me</h1>
+                <h1>About Me</h1>
             </div>
             <div class="about-main">
                 <div class="about-me p-4">
@@ -886,6 +958,6 @@
 
             })
 
-           
+
         </script>
     </body>
